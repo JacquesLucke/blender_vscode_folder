@@ -1,0 +1,51 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Blender (release)",
+            "type": "shell",
+            "options": {
+                "cwd": "/home/jacques/blender/build_release"
+            },
+            "command": "ninja blender install",
+            "problemMatcher": []
+        },
+        {
+            "label": "Build Blender (debug)",
+            "type": "shell",
+            "options": {
+                "cwd": "/home/jacques/blender/build_debug"
+            },
+            "command": "ninja blender install",
+            "problemMatcher": []
+        },
+        {
+            "label": "Run Blender (release)",
+            "type": "shell",
+            "command": "/home/jacques/blender/build_release/bin/blender",
+            "problemMatcher": [],
+            "dependsOn": "Build Blender (release)"
+        },
+        {
+            "label": "Build All (release)",
+            "type": "shell",
+            "options": {
+                "cwd": "/home/jacques/blender/build_release"
+            },
+            "command": "ninja",
+            "problemMatcher": []
+        },
+        {
+            "label": "Run Tests (release)",
+            "type": "shell",
+            "options": {
+                "cwd": "/home/jacques/blender/build_release"
+            },
+            "command": "ctest -j 24",
+            "problemMatcher": [],
+            "dependsOn": "Build All (release)"
+        },
+    ]
+}
