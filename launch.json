@@ -39,7 +39,7 @@
             "type": "gdb",
             "request": "launch",
             "target": "/home/jacques/blender/build_debug/bin/tests/blender_test",
-            "arguments": "--gtest_filter=obj_importer_test.import_materials",
+            "arguments": "--gtest_filter=obj_importer_test.import_materials --test-assets-dir /home/jacques/blender/lib/tests",
             "cwd": "${workspaceRoot}",
             "valuesFormatting": "prettyPrinters",
             "preLaunchTask": "Build Blender (debug)"
