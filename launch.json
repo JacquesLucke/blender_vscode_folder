@@ -6,12 +6,53 @@
     "configurations": [
         {
             "name": "Debug Blender (Native Debug)",
-            "type": "gdb",
+            "type": "by-gdb",
+            "program": "/home/jacques/blender/build_debug/bin/blender",
+            "programArgs": "--debug",
             "request": "launch",
-            "target": "/home/jacques/blender/build_debug/bin/blender",
             "cwd": "${workspaceRoot}",
             "valuesFormatting": "prettyPrinters",
             "preLaunchTask": "Build Blender (debug)"
         },
+        {
+            "name": "Debug Blender (Beyond)",
+            "type": "gdb",
+            "request": "launch",
+            "target": "/home/jacques/blender/build_debug/bin/blender",
+            "programArgs": "--debug",
+            "cwd": "${workspaceRoot}",
+            "valuesFormatting": "prettyPrinters",
+            "preLaunchTask": "Build Blender (debug)"
+        },
+        {
+            "name": "Debug Blender (asan, Beyond)",
+            "type": "gdb",
+            "request": "launch",
+            "target": "/home/jacques/blender/build_asan/bin/blender",
+            "programArgs": "--debug",
+            "cwd": "${workspaceRoot}",
+            "valuesFormatting": "prettyPrinters",
+            "preLaunchTask": "Build Blender (asan)"
+        },
+        {
+            "name": "Blender Tests (Native Debug)",
+            "type": "gdb",
+            "request": "launch",
+            "target": "/home/jacques/blender/build_debug/bin/tests/blender_test",
+            "arguments": "--gtest_filter=obj_importer_test.import_materials",
+            "cwd": "${workspaceRoot}",
+            "valuesFormatting": "prettyPrinters",
+            "preLaunchTask": "Build Blender (debug)"
+        },
+        {
+            "name": "Blenlib Tests (Native Debug)",
+            "type": "gdb",
+            "request": "launch",
+            "target": "/home/jacques/blender/build_debug/bin/tests/blenlib_test",
+            "arguments": "--gtest_filter=virtual_array.*",
+            "cwd": "${workspaceRoot}",
+            "valuesFormatting": "prettyPrinters",
+            "preLaunchTask": "Build Blenlib Test (debug)"
+        }
     ]
 }

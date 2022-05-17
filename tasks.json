@@ -22,6 +22,15 @@
             "problemMatcher": []
         },
         {
+            "label": "Build Blender (asan)",
+            "type": "shell",
+            "options": {
+                "cwd": "/home/jacques/blender/build_asan"
+            },
+            "command": "ninja blender install",
+            "problemMatcher": []
+        },
+        {
             "label": "Run Blender (release)",
             "type": "shell",
             "command": "/home/jacques/blender/build_release/bin/blender",
@@ -35,6 +44,15 @@
                 "cwd": "/home/jacques/blender/build_release"
             },
             "command": "ninja",
+            "problemMatcher": []
+        },
+        {
+            "label": "Build Blenlib Test (debug)",
+            "type": "shell",
+            "options": {
+                "cwd": "/home/jacques/blender/build_debug"
+            },
+            "command": "ninja blenlib_test",
             "problemMatcher": []
         },
         {

@@ -1,5 +1,5 @@
 {
-    "C_Cpp.default.compileCommands": "/home/jacques/blender/build_linux/compile_commands.json",
+    "C_Cpp.default.compileCommands": "/home/jacques/blender/build_debug/compile_commands.json",
     "editor.formatOnSave": true,
     "C_Cpp.clang_format_path": "/home/jacques/blender/lib/linux_centos7_x86_64/llvm/bin/clang-format",
     "files.associations": {
@@ -42,7 +42,6 @@
         "memory": "cpp",
         "memory_resource": "cpp",
         "numeric": "cpp",
-        "optional": "cpp",
         "random": "cpp",
         "ratio": "cpp",
         "string_view": "cpp",
@@ -73,6 +72,20 @@
         "cfenv": "cpp",
         "typeinfo": "cpp",
         "valarray": "cpp",
-        "variant": "cpp"
-    }
+        "variant": "cpp",
+        "bli_math_vec_types.hh": "c",
+        "*.tables": "cpp",
+        "bitset": "cpp",
+        "regex": "cpp",
+        "strstream": "cpp",
+        "codecvt": "cpp",
+        "shared_mutex": "cpp",
+        "typeindex": "cpp",
+        "charconv": "cpp",
+        "optional": "cpp",
+        "code-stdin-kjw": "cpp"
+    },
+    "gcovViewer.buildDirectories": [
+        "/home/jacques/blender/build_debug"
+    ]
 }
