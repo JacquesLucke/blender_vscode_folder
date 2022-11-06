@@ -1,6 +1,13 @@
 {
     "C_Cpp.default.compileCommands": "/home/jacques/blender/build_debug/compile_commands.json",
-    "editor.formatOnSave": true,
+    "C_Cpp.default.cppStandard": "c++17",
+    "editor.formatOnSave": false,
+    "[c]": {
+        "editor.formatOnSave": true
+    },
+    "[cpp]": {
+        "editor.formatOnSave": true
+    },
     "C_Cpp.clang_format_path": "/home/jacques/blender/lib/linux_centos7_x86_64/llvm/bin/clang-format",
     "files.associations": {
         "array": "cpp",
@@ -83,9 +90,32 @@
         "typeindex": "cpp",
         "charconv": "cpp",
         "optional": "cpp",
-        "code-stdin-kjw": "cpp"
+        "code-stdin-kjw": "cpp",
+        "jemalloc.h": "c",
+        "mallocn_intern.h": "c",
+        "direct_allocators.h": "c",
+        "stdlib.h": "c",
+        "kdtree_impl.h": "c",
+        "bke_collection.h": "c",
+        "bli_system.h": "c",
+        "dna_utils.h": "c",
+        "bli_string.h": "c",
+        "bke_movieclip.h": "c",
+        "pil_time.h": "c",
+        "gpencil_engine.h": "c",
+        "external_engine.h": "c",
+        "dna_view3d_enums.h": "c",
+        "dna_defs.h": "c",
+        "bke_modifier.h": "c"
     },
     "gcovViewer.buildDirectories": [
         "/home/jacques/blender/build_debug"
+    ],
+    "justGDB.debugPresets": [
+        {
+            "program": "/home/jacques/blender/build_debug/bin/blender",
+            "runDirectly": true,
+            "preLaunchTask": "Build Blender (debug)"
+        }
     ]
 }

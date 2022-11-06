@@ -33,7 +33,7 @@
         {
             "label": "Run Blender (release)",
             "type": "shell",
-            "command": "/home/jacques/blender/build_release/bin/blender",
+            "command": "/home/jacques/blender/build_release/bin/blender -t 24",
             "problemMatcher": [],
             "dependsOn": "Build Blender (release)"
         },
