@@ -106,7 +106,11 @@
         "external_engine.h": "c",
         "dna_view3d_enums.h": "c",
         "dna_defs.h": "c",
-        "bke_modifier.h": "c"
+        "bke_modifier.h": "c",
+        "bke_geometry_set.h": "c",
+        "bke_cryptomatte.h": "c",
+        "bke_texture.h": "c",
+        "re_texture.h": "c"
     },
     "gcovViewer.buildDirectories": [
         "/home/jacques/blender/build_debug"
