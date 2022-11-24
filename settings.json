@@ -110,7 +110,10 @@
         "bke_geometry_set.h": "c",
         "bke_cryptomatte.h": "c",
         "bke_texture.h": "c",
-        "re_texture.h": "c"
+        "re_texture.h": "c",
+        "eigen_capi.h": "c",
+        "eigenvalues.h": "c",
+        "core": "cpp"
     },
     "gcovViewer.buildDirectories": [
         "/home/jacques/blender/build_debug"
