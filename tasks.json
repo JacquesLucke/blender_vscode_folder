@@ -13,6 +13,15 @@
             "problemMatcher": []
         },
         {
+            "label": "Build Blender Reference (release)",
+            "type": "shell",
+            "options": {
+                "cwd": "/home/jacques/blender/build_release_reference"
+            },
+            "command": "ninja blender install",
+            "problemMatcher": []
+        },
+        {
             "label": "Build Blender (debug)",
             "type": "shell",
             "options": {
