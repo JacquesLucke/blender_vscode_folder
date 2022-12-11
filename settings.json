@@ -113,7 +113,9 @@
         "re_texture.h": "c",
         "eigen_capi.h": "c",
         "eigenvalues.h": "c",
-        "core": "cpp"
+        "core": "cpp",
+        "code-stdin-dhh": "cpp",
+        "execution": "cpp"
     },
     "gcovViewer.buildDirectories": [
         "/home/jacques/blender/build_debug"

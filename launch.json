@@ -61,7 +61,7 @@
             "type": "gdb",
             "request": "launch",
             "target": "/home/jacques/blender/build_debug/bin/tests/blenlib_test",
-            "arguments": "--gtest_filter=vector.RemoveIf",
+            "arguments": "--gtest_filter=vector.SizeConstructor",
             "cwd": "${workspaceRoot}",
             "valuesFormatting": "prettyPrinters",
             "preLaunchTask": "Build Blenlib Test (debug)"
