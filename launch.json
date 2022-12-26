@@ -5,21 +5,11 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug Blender (Native Debug)",
+            "name": "Debug Blender",
             "type": "gdb",
             "target": "/home/jacques/blender/build_debug/bin/blender",
-            "arguments": "-t 24 --debug",
+            "arguments": "-t 24 --debug-exit-on-error --debug",
             "request": "launch",
-            "cwd": "${workspaceRoot}",
-            "valuesFormatting": "prettyPrinters",
-            "preLaunchTask": "Build Blender (debug)"
-        },
-        {
-            "name": "Debug Blender (Beyond)",
-            "type": "gdb",
-            "request": "launch",
-            "target": "/home/jacques/blender/build_debug/bin/blender",
-            "arguments": "--debug -t 24",
             "cwd": "${workspaceRoot}",
             "valuesFormatting": "prettyPrinters",
             "preLaunchTask": "Build Blender (debug)"
@@ -37,11 +27,11 @@
             "showDisplayString": true
         },
         {
-            "name": "Debug Blender (asan, Beyond)",
+            "name": "Debug Blender (asan)",
             "type": "gdb",
-            "request": "launch",
             "target": "/home/jacques/blender/build_asan/bin/blender",
-            "arguments": "--debug",
+            "arguments": "-t 24 --debug-exit-on-error --debug",
+            "request": "launch",
             "cwd": "${workspaceRoot}",
             "valuesFormatting": "prettyPrinters",
             "preLaunchTask": "Build Blender (asan)"

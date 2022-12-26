@@ -115,7 +115,11 @@
         "eigenvalues.h": "c",
         "core": "cpp",
         "code-stdin-dhh": "cpp",
-        "execution": "cpp"
+        "execution": "cpp",
+        "dense": "cpp",
+        "dna_space_types.h": "c",
+        "source_location": "cpp",
+        "bli_strict_flags.h": "c"
     },
     "gcovViewer.buildDirectories": [
         "/home/jacques/blender/build_debug"
