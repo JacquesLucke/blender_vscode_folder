@@ -74,5 +74,15 @@
             "problemMatcher": [],
             "dependsOn": "Build All (release)"
         },
+        {
+            "label": "Run Geometry Nodes Tests (debug)",
+            "type": "shell",
+            "options": {
+                "cwd": "/home/jacques/blender/build_debug"
+            },
+            "command": "ctest -j 24 -R geo",
+            "problemMatcher": [],
+            "dependsOn": "Build Blender (debug)"
+        },
     ]
 }

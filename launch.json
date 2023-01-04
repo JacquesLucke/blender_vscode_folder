@@ -41,7 +41,7 @@
             "type": "gdb",
             "request": "launch",
             "target": "/home/jacques/blender/build_debug/bin/tests/blender_test",
-            "arguments": "--gtest_filter=field.Test* --test-assets-dir /home/jacques/blender/lib/tests",
+            "arguments": "--gtest_filter=lazy_function.PartialEvaluation --test-assets-dir /home/jacques/blender/lib/tests",
             "cwd": "${workspaceRoot}",
             "valuesFormatting": "prettyPrinters",
             "preLaunchTask": "Build Blender (debug)"
@@ -51,7 +51,7 @@
             "type": "gdb",
             "request": "launch",
             "target": "/home/jacques/blender/build_debug/bin/tests/blenlib_test",
-            "arguments": "--gtest_filter=vector.SizeConstructor",
+            "arguments": "--gtest_filter=local_pool* --test-assets-dir /home/jacques/blender/lib/tests",
             "cwd": "${workspaceRoot}",
             "valuesFormatting": "prettyPrinters",
             "preLaunchTask": "Build Blenlib Test (debug)"
