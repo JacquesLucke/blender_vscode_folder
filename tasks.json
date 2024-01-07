@@ -4,7 +4,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Build Blender (release)",
+            "label": "Build Release",
             "type": "shell",
             "options": {
                 "cwd": "/home/jacques/blender/build_release"
@@ -13,7 +13,7 @@
             "problemMatcher": []
         },
         {
-            "label": "Build Blender Reference (release)",
+            "label": "Build Release Reference",
             "type": "shell",
             "options": {
                 "cwd": "/home/jacques/blender/build_release_reference"
@@ -22,7 +22,7 @@
             "problemMatcher": []
         },
         {
-            "label": "Build Blender (debug)",
+            "label": "Build Debug",
             "type": "shell",
             "options": {
                 "cwd": "/home/jacques/blender/build_debug"
@@ -31,7 +31,7 @@
             "problemMatcher": []
         },
         {
-            "label": "Build Blender (asan)",
+            "label": "Build ASAN",
             "type": "shell",
             "options": {
                 "cwd": "/home/jacques/blender/build_asan"
@@ -40,14 +40,7 @@
             "problemMatcher": []
         },
         {
-            "label": "Run Blender (release)",
-            "type": "shell",
-            "command": "/home/jacques/blender/build_release/bin/blender -t 24",
-            "problemMatcher": [],
-            "dependsOn": "Build Blender (release)"
-        },
-        {
-            "label": "Build All (release)",
+            "label": "Build Release Full",
             "type": "shell",
             "options": {
                 "cwd": "/home/jacques/blender/build_release"
@@ -56,7 +49,14 @@
             "problemMatcher": []
         },
         {
-            "label": "Build Blenlib Test (debug)",
+            "label": "Start Release",
+            "type": "shell",
+            "command": "/home/jacques/blender/build_release/bin/blender -t 24",
+            "problemMatcher": [],
+            "dependsOn": "Build Release"
+        },
+        {
+            "label": "Build Blenlib Test",
             "type": "shell",
             "options": {
                 "cwd": "/home/jacques/blender/build_debug"
@@ -65,24 +65,24 @@
             "problemMatcher": []
         },
         {
-            "label": "Run Tests (release)",
+            "label": "Run Tests",
             "type": "shell",
             "options": {
                 "cwd": "/home/jacques/blender/build_release"
             },
             "command": "ctest -j 24",
             "problemMatcher": [],
-            "dependsOn": "Build All (release)"
+            "dependsOn": "Build Release Full"
         },
         {
-            "label": "Run Geometry Nodes Tests (debug)",
+            "label": "Run Geometry Nodes Tests",
             "type": "shell",
             "options": {
                 "cwd": "/home/jacques/blender/build_debug"
             },
             "command": "ctest -j 24 -R geo",
             "problemMatcher": [],
-            "dependsOn": "Build Blender (debug)"
+            "dependsOn": "Build Debug"
         },
     ]
 }

@@ -5,56 +5,34 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug Blender",
+            "name": "Blender",
             "type": "gdb",
             "target": "/home/jacques/blender/build_debug/bin/blender",
             "arguments": "-t 24 --debug-exit-on-error --debug",
             "request": "launch",
             "cwd": "${workspaceRoot}",
             "valuesFormatting": "prettyPrinters",
-            "preLaunchTask": "Build Blender (debug)"
+            "preLaunchTask": "Build Debug"
         },
         {
-            "name": "Debug Blender (Microsoft)",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "/home/jacques/blender/build_debug/bin/blender",
-            "cwd": "${workspaceRoot}",
-            "MIMode": "gdb",
-            "preLaunchTask": "Build Blender (debug)",
-            "miDebuggerPath": "/usr/bin/gdb",
-            "visualizerFile": "/home/jacques/blender/blender/source/blender/blenlib/blender.natvis",
-            "showDisplayString": true
-        },
-        {
-            "name": "Debug Blender (asan)",
+            "name": "Blender ASAN",
             "type": "gdb",
             "target": "/home/jacques/blender/build_asan/bin/blender",
             "arguments": "-t 24 --debug-exit-on-error --debug",
             "request": "launch",
             "cwd": "${workspaceRoot}",
             "valuesFormatting": "prettyPrinters",
-            "preLaunchTask": "Build Blender (asan)"
+            "preLaunchTask": "Build ASAN"
         },
         {
-            "name": "Blender Tests (Native Debug)",
+            "name": "GTest",
             "type": "gdb",
             "request": "launch",
             "target": "/home/jacques/blender/build_debug/bin/tests/blender_test",
             "arguments": "--gtest_filter=lazy_function.PartialEvaluation --test-assets-dir /home/jacques/blender/lib/tests",
             "cwd": "${workspaceRoot}",
             "valuesFormatting": "prettyPrinters",
-            "preLaunchTask": "Build Blender (debug)"
-        },
-        {
-            "name": "Blenlib Tests (Native Debug)",
-            "type": "gdb",
-            "request": "launch",
-            "target": "/home/jacques/blender/build_debug/bin/tests/blenlib_test",
-            "arguments": "--gtest_filter=local_pool* --test-assets-dir /home/jacques/blender/lib/tests",
-            "cwd": "${workspaceRoot}",
-            "valuesFormatting": "prettyPrinters",
-            "preLaunchTask": "Build Blenlib Test (debug)"
+            "preLaunchTask": "Build Debug"
         },
         {
             "name": "Makesdna",
