@@ -40,6 +40,15 @@
             "problemMatcher": []
         },
         {
+            "label": "Build Blenlib",
+            "type": "shell",
+            "options": {
+                "cwd": "/home/jacques/blender/build_debug"
+            },
+            "command": "ninja bf_blenlib BLI_test",
+            "problemMatcher": []
+        },
+        {
             "label": "Build Release Full",
             "type": "shell",
             "options": {
