@@ -74,6 +74,15 @@
             "problemMatcher": []
         },
         {
+            "label": "Build Compile Commands",
+            "type": "shell",
+            "options": {
+                "cwd": "/home/jacques/blender/build_compile_commands"
+            },
+            "command": "ninja makesrna",
+            "problemMatcher": []
+        },
+        {
             "label": "Run Tests",
             "type": "shell",
             "options": {

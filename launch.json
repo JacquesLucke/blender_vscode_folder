@@ -32,6 +32,16 @@
             "arguments": "--gtest_filter=index_mask.* --test-assets-dir /home/jacques/blender/lib/tests",
             "cwd": "${workspaceRoot}",
             "valuesFormatting": "prettyPrinters",
+            "preLaunchTask": "Build Blender"
+        },
+        {
+            "name": "Blenlib",
+            "type": "gdb",
+            "request": "launch",
+            "target": "/home/jacques/blender/build_debug/bin/tests/BLI_test",
+            "arguments": "--gtest_filter=bit_vector.* --test-assets-dir /home/jacques/blender/lib/tests",
+            "cwd": "${workspaceRoot}",
+            "valuesFormatting": "prettyPrinters",
             "preLaunchTask": "Build Blenlib"
         },
         {
@@ -42,6 +52,14 @@
             "arguments": "/home/jacques/blender/build_debug/source/blender/makesdna/intern/dna.c /home/jacques/blender/build_debug/source/blender/makesdna/intern/dna_type_offsets.h /home/jacques/blender/build_debug/source/blender/makesdna/intern/dna_verify.c /home/jacques/blender/blender/source/blender/makesdna/",
             "cwd": "/home/jacques/blender/build_debug/",
             "valuesFormatting": "prettyPrinters"
+        },
+        {
+            "name": "Custom",
+            "type": "gdb",
+            "request": "launch",
+            "target": "/home/jacques/blender/build_debug/bin/blender",
+            "arguments": "\"--background\" \"-noaudio\" \"--factory-startup\" \"--debug-memory\" \"--debug-exit-on-error\" \"--python-exit-code\" \"1\" \"--log\" \"*blendfile*\" \"--debug-memory\" \"--debug\" \"--python\" \"/home/jacques/blender/blender/tests/python/bl_blendfile_versioning.py\" \"--\" \"--src-test-dir\" \"/home/jacques/blender/blender/../lib/tests/\"",
+            "cwd": "/home/jacques/blender/build_debug"
         }
     ]
 }
