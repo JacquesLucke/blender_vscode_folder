@@ -31,6 +31,15 @@
             "problemMatcher": []
         },
         {
+            "label": "Build Reference",
+            "type": "shell",
+            "options": {
+                "cwd": "/home/jacques/blender/build_reference"
+            },
+            "command": "ninja blender install",
+            "problemMatcher": []
+        },
+        {
             "label": "Build ASAN",
             "type": "shell",
             "options": {
@@ -101,6 +110,25 @@
             "command": "ctest -j 24 -R geo",
             "problemMatcher": [],
             "dependsOn": "Build Debug"
+        },
+        {
+            "label": "Run Benchmark",
+            "type": "shell",
+            "options": {
+                "cwd": "/home/jacques/blender/blender/tests/performance"
+            },
+            "command": "./benchmark.py run",
+            "problemMatcher": [],
+            "dependsOn": "Build Release"
+        },
+        {
+            "label": "Weekly Report",
+            "type": "shell",
+            "options": {
+                "cwd": "/home/jacques/blender/.profile/reports"
+            },
+            "command": "python dev_weekly_report.py",
+            "problemMatcher": []
         },
     ]
 }
