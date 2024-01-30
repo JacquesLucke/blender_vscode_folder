@@ -79,7 +79,7 @@
             "options": {
                 "cwd": "/home/jacques/blender/build_compile_commands"
             },
-            "command": "ninja makesrna",
+            "command": "ninja makesrna bf_rna",
             "problemMatcher": []
         },
         {

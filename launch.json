@@ -39,7 +39,7 @@
             "type": "gdb",
             "request": "launch",
             "target": "/home/jacques/blender/build_debug/bin/tests/BLI_test",
-            "arguments": "--gtest_filter=bit_vector.* --test-assets-dir /home/jacques/blender/lib/tests",
+            "arguments": "--gtest_filter=any.* --test-assets-dir /home/jacques/blender/lib/tests",
             "cwd": "${workspaceRoot}",
             "valuesFormatting": "prettyPrinters",
             "preLaunchTask": "Build Blenlib"
