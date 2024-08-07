@@ -40,10 +40,28 @@
             "problemMatcher": []
         },
         {
-            "label": "Build Blenlib",
+            "label": "Build Blenlib (Debug)",
             "type": "shell",
             "options": {
                 "cwd": "/home/jacques/blender/build_debug"
+            },
+            "command": "ninja bf_blenlib BLI_test",
+            "problemMatcher": []
+        },
+        {
+            "label": "Build Blenlib (Asan)",
+            "type": "shell",
+            "options": {
+                "cwd": "/home/jacques/blender/build_asan"
+            },
+            "command": "ninja bf_blenlib BLI_test",
+            "problemMatcher": []
+        },
+        {
+            "label": "Build Blenlib (Release)",
+            "type": "shell",
+            "options": {
+                "cwd": "/home/jacques/blender/build_release"
             },
             "command": "ninja bf_blenlib BLI_test",
             "problemMatcher": []
@@ -63,15 +81,6 @@
             "command": "/home/jacques/blender/build_release/bin/blender -t 24",
             "problemMatcher": [],
             "dependsOn": "Build Release"
-        },
-        {
-            "label": "Build Blenlib Test",
-            "type": "shell",
-            "options": {
-                "cwd": "/home/jacques/blender/build_debug"
-            },
-            "command": "ninja blenlib_test",
-            "problemMatcher": []
         },
         {
             "label": "Build Compile Commands",
@@ -101,6 +110,16 @@
             "command": "ctest -j 24 -R geo",
             "problemMatcher": [],
             "dependsOn": "Build Debug"
+        },
+        {
+            "label": "Run Blenlib Tests (Release)",
+            "type": "shell",
+            "options": {
+                "cwd": "/home/jacques/blender/build_debug"
+            },
+            "command": "./bin/tests/BLI_test --gtest_filter=index_mask_expression.* --test-assets-dir /home/jacques/blender/lib/tests",
+            "problemMatcher": [],
+            "dependsOn": "Build Blenlib (Release)"
         },
         {
             "label": "Run Benchmark",

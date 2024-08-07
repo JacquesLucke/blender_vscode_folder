@@ -13,6 +13,32 @@
             "cwd": "${workspaceRoot}",
             "valuesFormatting": "prettyPrinters",
             "preLaunchTask": "Build Debug"
+            // ,"frameFilters": true
+        },
+        {
+            "name": "Blender (microsoft)",
+            "type": "cppdbg",
+            "program": "/home/jacques/blender/build_debug/bin/blender",
+            "cwd": "${workspaceRoot}",
+            "request": "launch",
+            "args": [
+                "-t",
+                "24",
+                "--debug"
+            ],
+            "preLaunchTask": "Build Debug",
+            "setupCommands": [
+                {
+                    "text": "-enable-pretty-printing",
+                    "description": "Enable GDB pretty printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "text": "-enable-frame-filters",
+                    "description": "Enable GDB frame filters",
+                    "ignoreFailures": true
+                }
+            ]
         },
         {
             "name": "Blender ASAN",
@@ -28,21 +54,21 @@
             "name": "GTest",
             "type": "gdb",
             "request": "launch",
-            "target": "/home/jacques/blender/build_debug/bin/tests/BLI_test",
-            "arguments": "--gtest_filter=index_mask.* --test-assets-dir /home/jacques/blender/lib/tests",
+            "target": "/home/jacques/blender/build_debug/bin/tests/blender_test",
+            "arguments": "--gtest_filter=STLExportTest.*:stl_importer_test.* --test-assets-dir /home/jacques/blender/lib/tests --test-release-dir /home/jacques/blender/build_debug/bin/4.2",
             "cwd": "${workspaceRoot}",
             "valuesFormatting": "prettyPrinters",
-            "preLaunchTask": "Build Blender"
+            "preLaunchTask": "Build Debug"
         },
         {
             "name": "Blenlib",
             "type": "gdb",
             "request": "launch",
             "target": "/home/jacques/blender/build_debug/bin/tests/BLI_test",
-            "arguments": "--gtest_filter=any.* --test-assets-dir /home/jacques/blender/lib/tests",
+            "arguments": "--gtest_filter=virtual_array.* --test-assets-dir /home/jacques/blender/lib/tests",
             "cwd": "${workspaceRoot}",
             "valuesFormatting": "prettyPrinters",
-            "preLaunchTask": "Build Blenlib"
+            "preLaunchTask": "Build Blenlib (Debug)"
         },
         {
             "name": "Makesdna",
@@ -52,6 +78,14 @@
             "arguments": "/home/jacques/blender/build_debug/source/blender/makesdna/intern/dna.c /home/jacques/blender/build_debug/source/blender/makesdna/intern/dna_type_offsets.h /home/jacques/blender/build_debug/source/blender/makesdna/intern/dna_verify.c /home/jacques/blender/blender/source/blender/makesdna/",
             "cwd": "/home/jacques/blender/build_debug/",
             "valuesFormatting": "prettyPrinters"
+        },
+        {
+            "name": "Makesrna",
+            "type": "gdb",
+            "request": "launch",
+            "target": "/home/jacques/blender/build_debug/bin/makesrna",
+            "arguments": "/home/jacques/blender/build_debug/source/blender/makesrna/intern/ /home/jacques/blender/build_debug/source/blender/makesrna/intern/../",
+            "cwd": "/home/jacques/blender/build_debug/"
         },
         {
             "name": "Custom",
