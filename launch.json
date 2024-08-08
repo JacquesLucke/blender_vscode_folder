@@ -10,7 +10,7 @@
             "target": "/home/jacques/blender/build_debug/bin/blender",
             "arguments": "-t 24 --debug",
             "request": "launch",
-            "cwd": "${workspaceRoot}",
+            "cwd": "${workspaceFolder}",
             "valuesFormatting": "prettyPrinters",
             "preLaunchTask": "Build Debug"
             // ,"frameFilters": true
@@ -19,7 +19,7 @@
             "name": "Blender (microsoft)",
             "type": "cppdbg",
             "program": "/home/jacques/blender/build_debug/bin/blender",
-            "cwd": "${workspaceRoot}",
+            "cwd": "${workspaceFolder}",
             "request": "launch",
             "args": [
                 "-t",
@@ -46,7 +46,7 @@
             "target": "/home/jacques/blender/build_asan/bin/blender",
             "arguments": "-t 24 --debug",
             "request": "launch",
-            "cwd": "${workspaceRoot}",
+            "cwd": "${workspaceFolder}",
             "valuesFormatting": "prettyPrinters",
             "preLaunchTask": "Build ASAN"
         },
@@ -56,7 +56,7 @@
             "request": "launch",
             "target": "/home/jacques/blender/build_debug/bin/tests/blender_test",
             "arguments": "--gtest_filter=STLExportTest.*:stl_importer_test.* --test-assets-dir /home/jacques/blender/lib/tests --test-release-dir /home/jacques/blender/build_debug/bin/4.2",
-            "cwd": "${workspaceRoot}",
+            "cwd": "${workspaceFolder}",
             "valuesFormatting": "prettyPrinters",
             "preLaunchTask": "Build Debug"
         },
@@ -65,8 +65,8 @@
             "type": "gdb",
             "request": "launch",
             "target": "/home/jacques/blender/build_debug/bin/tests/BLI_test",
-            "arguments": "--gtest_filter=virtual_array.* --test-assets-dir /home/jacques/blender/lib/tests",
-            "cwd": "${workspaceRoot}",
+            "arguments": "--gtest_filter=vector.* --test-assets-dir /home/jacques/blender/lib/tests",
+            "cwd": "${workspaceFolder}",
             "valuesFormatting": "prettyPrinters",
             "preLaunchTask": "Build Blenlib (Debug)"
         },
