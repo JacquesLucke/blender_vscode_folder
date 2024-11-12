@@ -88,7 +88,7 @@
             "options": {
                 "cwd": "/home/jacques/blender/build_compile_commands"
             },
-            "command": "ninja makesrna bf_rna",
+            "command": "ninja makesrna bf_rna source/blender/makesdna/intern/dna_type_offsets.h",
             "problemMatcher": []
         },
         {
@@ -132,6 +132,15 @@
             "dependsOn": "Build Release"
         },
         {
+            "label": "Coverage Report",
+            "type": "shell",
+            "options": {
+                "cwd": "/home/jacques/blender/build_debug"
+            },
+            "command": "ninja coverage-report",
+            "problemMatcher": []
+        },
+        {
             "label": "Weekly Report",
             "type": "shell",
             "options": {
@@ -139,6 +148,6 @@
             },
             "command": "python dev_weekly_report.py",
             "problemMatcher": []
-        },
+        }
     ]
 }
