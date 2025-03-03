@@ -7,18 +7,20 @@
         {
             "name": "Blender",
             "type": "gdb",
-            "target": "/home/jacques/blender/build_debug/bin/blender",
+            "target": "/home/jacques/blender/builds/debug_gcc/bin/blender",
             "arguments": "-t 24 --debug",
             "request": "launch",
             "cwd": "${workspaceFolder}",
             "valuesFormatting": "prettyPrinters",
+            "env": {},
+            // "printCalls": true,
             "preLaunchTask": "Build Debug"
             // ,"frameFilters": true
         },
         {
-            "name": "Blender (microsoft)",
+            "name": "Blender (Microsoft)",
             "type": "cppdbg",
-            "program": "/home/jacques/blender/build_debug/bin/blender",
+            "program": "/home/jacques/blender/builds/debug_gcc/bin/blender",
             "cwd": "${workspaceFolder}",
             "request": "launch",
             "args": [
@@ -41,9 +43,9 @@
             ]
         },
         {
-            "name": "Blender ASAN",
+            "name": "Blender ASAN Debug GCC",
             "type": "gdb",
-            "target": "/home/jacques/blender/build_asan/bin/blender",
+            "target": "/home/jacques/blender/builds/asan_debug_gcc/bin/blender",
             "arguments": "-t 24 --debug",
             "request": "launch",
             "cwd": "${workspaceFolder}",
@@ -54,8 +56,8 @@
             "name": "GTest",
             "type": "gdb",
             "request": "launch",
-            "target": "/home/jacques/blender/build_debug/bin/tests/blender_test",
-            "arguments": "--gtest_filter=STLExportTest.*:stl_importer_test.* --test-assets-dir /home/jacques/blender/lib/tests --test-release-dir /home/jacques/blender/build_debug/bin/4.2",
+            "target": "/home/jacques/blender/builds/debug_gcc/bin/tests/blender_test",
+            "arguments": "--gtest_filter=* --test-assets-dir /home/jacques/blender/blender/tests/data --test-release-dir /home/jacques/blender/builds/debug_gcc/bin/4.4",
             "cwd": "${workspaceFolder}",
             "valuesFormatting": "prettyPrinters",
             "preLaunchTask": "Build Debug"
@@ -64,36 +66,66 @@
             "name": "Blenlib",
             "type": "gdb",
             "request": "launch",
-            "target": "/home/jacques/blender/build_debug/bin/tests/BLI_test",
-            "arguments": "--gtest_filter=vector.* --test-assets-dir /home/jacques/blender/lib/tests",
+            "target": "/home/jacques/blender/builds/debug_gcc/bin/tests/BLI_test",
+            "arguments": "--gtest_filter=csv* --test-assets-dir /home/jacques/blender/lib/tests",
             "cwd": "${workspaceFolder}",
             "valuesFormatting": "prettyPrinters",
             "preLaunchTask": "Build Blenlib (Debug)"
         },
         {
+            "name": "Blenlib (Microsoft)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/home/jacques/blender/builds/debug_gcc/bin/tests/BLI_test",
+            "args": ["--gtest_filter=csv_parse.*", " --test-assets-dir", "/home/jacques/blender/lib/tests"],
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "Build Blenlib (Debug)",
+            "setupCommands": [
+                {
+                    "text": "-enable-pretty-printing",
+                    "description": "Enable GDB pretty printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "text": "-enable-frame-filters",
+                    "description": "Enable GDB frame filters",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
             "name": "Makesdna",
             "type": "gdb",
             "request": "launch",
-            "target": "/home/jacques/blender/build_debug/bin/makesdna",
-            "arguments": "/home/jacques/blender/build_debug/source/blender/makesdna/intern/dna.c /home/jacques/blender/build_debug/source/blender/makesdna/intern/dna_type_offsets.h /home/jacques/blender/build_debug/source/blender/makesdna/intern/dna_verify.c /home/jacques/blender/blender/source/blender/makesdna/",
-            "cwd": "/home/jacques/blender/build_debug/",
+            "target": "/home/jacques/blender/builds/debug_gcc/bin/makesdna",
+            "arguments": "/home/jacques/blender/builds/debug_gcc/source/blender/makesdna/intern/dna.c /home/jacques/blender/builds/debug_gcc/source/blender/makesdna/intern/dna_type_offsets.h /home/jacques/blender/builds/debug_gcc/source/blender/makesdna/intern/dna_verify.c /home/jacques/blender/blender/source/blender/makesdna/",
+            "cwd": "/home/jacques/blender/builds/debug_gcc/",
             "valuesFormatting": "prettyPrinters"
         },
         {
             "name": "Makesrna",
             "type": "gdb",
             "request": "launch",
-            "target": "/home/jacques/blender/build_debug/bin/makesrna",
-            "arguments": "/home/jacques/blender/build_debug/source/blender/makesrna/intern/ /home/jacques/blender/build_debug/source/blender/makesrna/intern/../",
-            "cwd": "/home/jacques/blender/build_debug/"
+            "target": "/home/jacques/blender/builds/debug_gcc/bin/makesrna",
+            "arguments": "/home/jacques/blender/builds/debug_gcc/source/blender/makesrna/intern/ /home/jacques/blender/builds/debug_gcc/source/blender/makesrna/intern/../",
+            "cwd": "/home/jacques/blender/builds/debug_gcc/"
         },
         {
             "name": "Custom",
             "type": "gdb",
             "request": "launch",
-            "target": "/home/jacques/blender/build_debug/bin/blender",
-            "arguments": "\"--background\" \"-noaudio\" \"--factory-startup\" \"--debug-memory\" \"--debug-exit-on-error\" \"--python-exit-code\" \"1\" \"--log\" \"*blendfile*\" \"--debug-memory\" \"--debug\" \"--python\" \"/home/jacques/blender/blender/tests/python/bl_blendfile_versioning.py\" \"--\" \"--src-test-dir\" \"/home/jacques/blender/blender/../lib/tests/\"",
-            "cwd": "/home/jacques/blender/build_debug"
+            "target": "/home/jacques/blender/builds/debug_gcc/bin/blender",
+            "arguments": "\"--background\" \"--factory-startup\" \"--debug-memory\" \"--python-exit-code\" \"1\" \"--python\" \"/home/jacques/blender/blender/tests/python/io_ply_import_test.py\" \"--\" \"--testdir\" \"/home/jacques/blender/blender/tests/data/io_tests/ply\" \"--outdir\" \"/home/jacques/blender/builds/debug_gcc/tests/io_ply\"",
+            "cwd": "/home/jacques/blender/builds/debug_gcc",
+            "preLaunchTask": "Build Debug"
+        },
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": ["report", "--build-directory", "/home/jacques/blender/builds/debug_gcc"]
         }
     ]
 }

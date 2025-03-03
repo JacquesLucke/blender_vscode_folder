@@ -7,7 +7,7 @@
             "label": "Build Release",
             "type": "shell",
             "options": {
-                "cwd": "/home/jacques/blender/build_release"
+                "cwd": "/home/jacques/blender/builds/release_gcc"
             },
             "command": "ninja blender install",
             "problemMatcher": []
@@ -16,7 +16,7 @@
             "label": "Build Debug",
             "type": "shell",
             "options": {
-                "cwd": "/home/jacques/blender/build_debug"
+                "cwd": "/home/jacques/blender/builds/debug_gcc"
             },
             "command": "ninja blender install",
             "problemMatcher": []
@@ -25,7 +25,7 @@
             "label": "Build Reference",
             "type": "shell",
             "options": {
-                "cwd": "/home/jacques/blender/build_reference"
+                "cwd": "/home/jacques/blender/builds/reference_release_gcc"
             },
             "command": "ninja blender install",
             "problemMatcher": []
@@ -34,7 +34,7 @@
             "label": "Build ASAN",
             "type": "shell",
             "options": {
-                "cwd": "/home/jacques/blender/build_asan"
+                "cwd": "/home/jacques/blender/builds/asan_debug_gcc"
             },
             "command": "ninja blender install",
             "problemMatcher": []
@@ -43,7 +43,7 @@
             "label": "Build Blenlib (Debug)",
             "type": "shell",
             "options": {
-                "cwd": "/home/jacques/blender/build_debug"
+                "cwd": "/home/jacques/blender/builds/debug_gcc"
             },
             "command": "ninja bf_blenlib BLI_test",
             "problemMatcher": []
@@ -52,7 +52,7 @@
             "label": "Build Blenlib (Asan)",
             "type": "shell",
             "options": {
-                "cwd": "/home/jacques/blender/build_asan"
+                "cwd": "/home/jacques/blender/builds/asan_debug_gcc"
             },
             "command": "ninja bf_blenlib BLI_test",
             "problemMatcher": []
@@ -61,7 +61,7 @@
             "label": "Build Blenlib (Release)",
             "type": "shell",
             "options": {
-                "cwd": "/home/jacques/blender/build_release"
+                "cwd": "/home/jacques/blender/builds/release_gcc"
             },
             "command": "ninja bf_blenlib BLI_test",
             "problemMatcher": []
@@ -70,7 +70,7 @@
             "label": "Build Release Full",
             "type": "shell",
             "options": {
-                "cwd": "/home/jacques/blender/build_release"
+                "cwd": "/home/jacques/blender/builds/release_gcc"
             },
             "command": "ninja",
             "problemMatcher": []
@@ -78,7 +78,7 @@
         {
             "label": "Start Release",
             "type": "shell",
-            "command": "/home/jacques/blender/build_release/bin/blender -t 24",
+            "command": "/home/jacques/blender/builds/release_gcc/bin/blender -t 24",
             "problemMatcher": [],
             "dependsOn": "Build Release"
         },
@@ -86,7 +86,7 @@
             "label": "Build Compile Commands",
             "type": "shell",
             "options": {
-                "cwd": "/home/jacques/blender/build_compile_commands"
+                "cwd": "/home/jacques/blender/builds/compile_commands"
             },
             "command": "ninja makesrna bf_rna source/blender/makesdna/intern/dna_type_offsets.h",
             "problemMatcher": []
@@ -95,7 +95,7 @@
             "label": "Run Tests",
             "type": "shell",
             "options": {
-                "cwd": "/home/jacques/blender/build_release"
+                "cwd": "/home/jacques/blender/builds/release_gcc"
             },
             "command": "ctest -j 24",
             "problemMatcher": [],
@@ -105,7 +105,7 @@
             "label": "Run Geometry Nodes Tests",
             "type": "shell",
             "options": {
-                "cwd": "/home/jacques/blender/build_debug"
+                "cwd": "/home/jacques/blender/builds/debug_gcc"
             },
             "command": "ctest -j 24 -R geo",
             "problemMatcher": [],
@@ -115,7 +115,7 @@
             "label": "Run Blenlib Tests (Release)",
             "type": "shell",
             "options": {
-                "cwd": "/home/jacques/blender/build_debug"
+                "cwd": "/home/jacques/blender/builds/debug_gcc"
             },
             "command": "./bin/tests/BLI_test --gtest_filter=index_mask_expression.* --test-assets-dir /home/jacques/blender/lib/tests",
             "problemMatcher": [],
@@ -135,7 +135,7 @@
             "label": "Coverage Report",
             "type": "shell",
             "options": {
-                "cwd": "/home/jacques/blender/build_debug"
+                "cwd": "/home/jacques/blender/builds/debug_gcc"
             },
             "command": "ninja coverage-report",
             "problemMatcher": []

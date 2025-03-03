@@ -7,6 +7,15 @@
     "[cpp]": {
         "editor.formatOnSave": true
     },
+    "[html]": {
+        "editor.maxTokenizationLineLength": 2500,
+        "editor.formatOnSave": true
+    },
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "ms-python.autopep8"
+    },
+    "editor.showDeprecated": false,
     "files.associations": {
         "array": "cpp",
         "atomic": "cpp",
@@ -120,9 +129,6 @@
         "bli_strict_flags.h": "c",
         "any": "cpp"
     },
-    "gcovViewer.buildDirectories": [
-        "/home/jacques/blender/build_debug"
-    ],
     "justGDB.debugPresets": [
         {
             "program": "/home/jacques/blender/build_debug/bin/blender",
@@ -133,5 +139,11 @@
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
-    "C_Cpp.dimInactiveRegions": false
+    "C_Cpp.dimInactiveRegions": false,
+    "gitlens.remotes": [
+        {
+            "domain": "projects.blender.org",
+            "type": "Gitea"
+        }
+    ]
 }
