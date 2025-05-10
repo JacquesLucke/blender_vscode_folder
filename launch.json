@@ -43,9 +43,9 @@
             ]
         },
         {
-            "name": "Blender ASAN Debug GCC",
+            "name": "Blender ASAN Debug Clang",
             "type": "gdb",
-            "target": "/home/jacques/blender/builds/asan_debug_gcc/bin/blender",
+            "target": "/home/jacques/blender/builds/asan_debug_clang/bin/blender",
             "arguments": "-t 24 --debug",
             "request": "launch",
             "cwd": "${workspaceFolder}",
@@ -67,7 +67,7 @@
             "type": "gdb",
             "request": "launch",
             "target": "/home/jacques/blender/builds/debug_gcc/bin/tests/BLI_test",
-            "arguments": "--gtest_filter=csv* --test-assets-dir /home/jacques/blender/lib/tests",
+            "arguments": "--gtest_filter=vector.* --test-assets-dir /home/jacques/blender/lib/tests",
             "cwd": "${workspaceFolder}",
             "valuesFormatting": "prettyPrinters",
             "preLaunchTask": "Build Blenlib (Debug)"

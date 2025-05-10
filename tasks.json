@@ -34,7 +34,7 @@
             "label": "Build ASAN",
             "type": "shell",
             "options": {
-                "cwd": "/home/jacques/blender/builds/asan_debug_gcc"
+                "cwd": "/home/jacques/blender/builds/asan_debug_clang"
             },
             "command": "ninja blender install",
             "problemMatcher": []
@@ -110,6 +110,19 @@
             "command": "ctest -j 24 -R geo",
             "problemMatcher": [],
             "dependsOn": "Build Debug"
+        },
+        {
+            "label": "Update Geometry Nodes Tests",
+            "type": "shell",
+            "options": {
+                "cwd": "/home/jacques/blender/builds/debug_gcc",
+                "env": {
+                    "BLENDER_TEST_UPDATE": "1",
+                }
+            },
+            "command": "ctest -j 24 -R geo",
+            "problemMatcher": [],
+            "dependsOn": "Build Debug",
         },
         {
             "label": "Run Blenlib Tests (Release)",
