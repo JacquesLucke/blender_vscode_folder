@@ -120,7 +120,7 @@
                     "BLENDER_TEST_UPDATE": "1",
                 }
             },
-            "command": "ctest -j 24 -R geo",
+            "command": "cmake . && ctest -j 24 -R geo",
             "problemMatcher": [],
             "dependsOn": "Build Debug",
         },

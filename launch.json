@@ -67,7 +67,7 @@
             "type": "gdb",
             "request": "launch",
             "target": "/home/jacques/blender/builds/debug_gcc/bin/tests/BLI_test",
-            "arguments": "--gtest_filter=vector.* --test-assets-dir /home/jacques/blender/lib/tests",
+            "arguments": "--gtest_filter=vectorlist.* --test-assets-dir /home/jacques/blender/lib/tests",
             "cwd": "${workspaceFolder}",
             "valuesFormatting": "prettyPrinters",
             "preLaunchTask": "Build Blenlib (Debug)"
@@ -115,17 +115,17 @@
             "type": "gdb",
             "request": "launch",
             "target": "/home/jacques/blender/builds/debug_gcc/bin/blender",
-            "arguments": "\"--background\" \"--factory-startup\" \"--debug-memory\" \"--python-exit-code\" \"1\" \"--python\" \"/home/jacques/blender/blender/tests/python/io_ply_import_test.py\" \"--\" \"--testdir\" \"/home/jacques/blender/blender/tests/data/io_tests/ply\" \"--outdir\" \"/home/jacques/blender/builds/debug_gcc/tests/io_ply\"",
+            "arguments": "\"--background\" \"--factory-startup\" \"--debug-memory\" \"--debug-exit-on-error\" \"--python-exit-code\" \"1\" \"--python\" \"/home/jacques/blender/blender/tests/python/bl_load_addons.py\"",
             "cwd": "/home/jacques/blender/builds/debug_gcc",
             "preLaunchTask": "Build Debug"
         },
         {
-            "name": "Python Debugger: Current File",
+            "name": "Python File",
             "type": "debugpy",
             "request": "launch",
-            "program": "${file}",
+            "program": "/home/jacques/blender/blender/tools/utils/blend2json.py",
             "console": "integratedTerminal",
-            "args": ["report", "--build-directory", "/home/jacques/blender/builds/debug_gcc"]
+            "args": ["/home/jacques/Downloads/bhead_small.blend"]
         }
     ]
 }
