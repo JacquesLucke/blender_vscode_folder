@@ -57,7 +57,7 @@
             "type": "gdb",
             "request": "launch",
             "target": "/home/jacques/blender/builds/debug_gcc/bin/tests/blender_test",
-            "arguments": "--gtest_filter=* --test-assets-dir /home/jacques/blender/blender/tests/data --test-release-dir /home/jacques/blender/builds/debug_gcc/bin/4.4",
+            "arguments": "--gtest_filter=BundleTest.* --test-assets-dir /home/jacques/blender/blender/tests/data --test-release-dir /home/jacques/blender/builds/debug_gcc/bin/4.4",
             "cwd": "${workspaceFolder}",
             "valuesFormatting": "prettyPrinters",
             "preLaunchTask": "Build Debug"
@@ -115,7 +115,7 @@
             "type": "gdb",
             "request": "launch",
             "target": "/home/jacques/blender/builds/debug_gcc/bin/blender",
-            "arguments": "\"--background\" \"--factory-startup\" \"--debug-memory\" \"--debug-exit-on-error\" \"--python-exit-code\" \"1\" \"--python\" \"/home/jacques/blender/blender/tests/python/bl_load_addons.py\"",
+            "arguments": "\"--background\" \"--factory-startup\" \"--debug-memory\" \"--debug-exit-on-error\" \"--python-exit-code\" \"1\" \"--python\" \"/home/jacques/blender/blender/tests/python/bl_node_socket_usage_inference.py\"",
             "cwd": "/home/jacques/blender/builds/debug_gcc",
             "preLaunchTask": "Build Debug"
         },
